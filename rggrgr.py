@@ -3,10 +3,10 @@ import subprocess
 from pathlib import Path
 from tqdm import tqdm
 
-INPUT_VIDEO = "c:\\Users\\Beebo\\Downloads\\video4917965384755184901.mp4"
-OUTPUT_VIDEO = "c:\\Users\\Beebo\\wh44arr4r.mp4"
+INPUT_VIDEO = "c:\\Users\\Beebo\\Downloads\\video4917965384755184901.mp4"  # replace path
+OUTPUT_VIDEO = "c:\\Users\\Beebo\\wh44arr4r.mp4"  # replace path
 TEMP_DIR = Path("temp_frames")
-TEMP_AUDIO = Path("wha4r.aac")  # Using AAC as it's widely compatible
+TEMP_AUDIO = Path("wha4r.aac")  # replace name
 FILTER = "charcoal:2"  # Example ImageMagick filter
 
 def extract_frames_and_audio(input_video, output_folder, audio_file):
@@ -29,7 +29,7 @@ def apply_imagemagick_filter(input_folder, filter_name):
     for frame in tqdm(frames, desc="Applying ImageMagick"):
         subprocess.run([
             "magick", str(frame),
-            "-swirl", "110",  # Change this to other effects like -edge 1
+            "-swirl", "110",  # Change this to other effects
             str(frame)
         ], check=True)
 
